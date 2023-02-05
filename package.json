@@ -12,7 +12,9 @@
     "preview": "npm run build && vite preview --host",
     "type:check": "vue-tsc --noEmit --skipLibCheck",
     "lint-staged": "npx lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "git add . && cz-customizable",
+    "changelog": "conventional-changelog -p cz-config.js -i CHANGELOG.md -s -r 0"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
@@ -34,6 +36,8 @@
     "@vueuse/core": "^9.3.0",
     "arco-design-pro-vue": "^2.6.0",
     "axios": "^0.24.0",
+    "conventional-changelog": "^3.1.25",
+    "conventional-changelog-cli": "^2.2.2",
     "dayjs": "^1.11.5",
     "echarts": "^5.4.0",
     "lodash": "^4.17.21",
@@ -49,7 +53,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
+    "@commitlint/config-conventional": "^17.4.2",
     "@types/lodash": "^4.14.186",
     "@types/mockjs": "^1.0.7",
     "@types/nprogress": "^0.2.0",
@@ -59,8 +63,15 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "@vue/babel-plugin-jsx": "^1.1.1",
+    "commitizen": "^4.3.0",
+    "commitlint": "^17.4.2",
+    "commitlint-config-cz": "^0.13.3",
+    "commitlint-config-git-commit-emoji": "^1.0.0",
     "consola": "^2.15.3",
+    "cosmiconfig-typescript-loader": "^4.3.0",
     "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8.25.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
@@ -99,5 +110,10 @@
     "bin-wrapper": "npm:bin-wrapper-china",
     "rollup": "^2.56.3",
     "gifsicle": "5.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
