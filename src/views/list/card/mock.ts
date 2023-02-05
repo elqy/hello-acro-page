@@ -2,6 +2,9 @@ import Mock from 'mockjs';
 import setupMock, { successResponseWrap } from '@/utils/setup-mock';
 import { ServiceRecord } from '@/api/list';
 
+/**
+ * 定义服务数据的模拟数据
+ */
 const qualityInspectionList: ServiceRecord[] = [
   {
     id: 1,
@@ -64,6 +67,7 @@ const qualityInspectionList: ServiceRecord[] = [
     ],
   },
 ];
+
 const theServiceList: ServiceRecord[] = [
   {
     id: 1,
@@ -103,6 +107,7 @@ const theServiceList: ServiceRecord[] = [
     actionType: 'button',
   },
 ];
+
 const rulesPresetList: ServiceRecord[] = [
   {
     id: 1,

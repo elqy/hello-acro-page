@@ -1,10 +1,14 @@
 <template>
+  <!--引入布局组件 是否隐藏左侧菜单栏-->
   <a-layout class="layout" :class="{ mobile: appStore.hideMenu }">
+    <!--是否渲染导航栏-->
     <div v-if="navbar" class="layout-navbar">
       <NavBar />
     </div>
+    <!---->
     <a-layout>
       <a-layout>
+        <!--布局sider 边栏-->
         <a-layout-sider
           v-if="renderMenu"
           v-show="!hideMenu"
@@ -21,6 +25,7 @@
             <Menu />
           </div>
         </a-layout-sider>
+        <!--抽屉 里面有菜单栏，与边栏互斥-->
         <a-drawer
           v-if="hideMenu"
           :visible="drawerVisible"
@@ -32,11 +37,15 @@
         >
           <Menu />
         </a-drawer>
+        <!--右侧内容页-->
         <a-layout class="layout-content" :style="paddingStyle">
+          <!--TabBar组件-->
           <TabBar v-if="appStore.tabBar" />
+          <!--内容布局-->
           <a-layout-content>
             <PageLayout />
           </a-layout-content>
+          <!--页脚-->
           <Footer v-if="footer" />
         </a-layout>
       </a-layout>
@@ -125,6 +134,7 @@
     z-index: 99;
     height: 100%;
     transition: all 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+
     &::after {
       position: absolute;
       top: 0;
@@ -145,6 +155,7 @@
     height: 100%;
     overflow: auto;
     overflow-x: hidden;
+
     :deep(.arco-menu) {
       ::-webkit-scrollbar {
         width: 12px;
@@ -152,10 +163,10 @@
       }
 
       ::-webkit-scrollbar-thumb {
-        border: 4px solid transparent;
-        background-clip: padding-box;
-        border-radius: 7px;
         background-color: var(--color-text-4);
+        background-clip: padding-box;
+        border: 4px solid transparent;
+        border-radius: 7px;
       }
 
       ::-webkit-scrollbar-thumb:hover {

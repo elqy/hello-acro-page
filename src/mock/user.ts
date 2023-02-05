@@ -8,6 +8,8 @@ import { MockParams } from '@/types/mock';
 import { isLogin } from '@/utils/auth';
 
 setupMock({
+  // mock:false, // 非生产环境下默认启动数据模拟，
+  // 当我们需要调试接口的时候只需要将 setupMock 的 mock 参数置为 false 即可
   setup() {
     // Mock.XHR.prototype.withCredentials = true;
 

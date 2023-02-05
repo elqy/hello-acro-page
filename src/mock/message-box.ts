@@ -1,7 +1,8 @@
 import Mock from 'mockjs';
 import setupMock, { successResponseWrap } from '@/utils/setup-mock';
-
+// 定义已读消息数组Ids
 const haveReadIds: number[] = [];
+// 定义messageList ，通过map进行格式化，增加了status
 const getMessageList = () => {
   return [
     {

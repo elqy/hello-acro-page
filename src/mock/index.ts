@@ -1,8 +1,11 @@
 import Mock from 'mockjs';
-
+// 加载用户和消息的mock数据
 import './user';
 import './message-box';
 
+/**
+ * 加载各个模块的mock数据
+ */
 import '@/views/dashboard/workplace/mock';
 
 import '@/views/dashboard/monitor/mock';

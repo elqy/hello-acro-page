@@ -1,3 +1,4 @@
+// 定路服务器端的路由白名单，允许那些路由不需要认证
 export const WHITE_LIST = [
   { name: 'notFound', children: [] },
   { name: 'login', children: [] },

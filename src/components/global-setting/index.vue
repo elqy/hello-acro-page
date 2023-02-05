@@ -79,7 +79,9 @@
     await copy(text);
     Message.success(t('settings.copySettings.message'));
   };
+  // 设置可视化
   const setVisible = () => {
+    // 更新appStore中的全局设置为ture
     appStore.updateSettings({ globalSettings: true });
   };
 </script>

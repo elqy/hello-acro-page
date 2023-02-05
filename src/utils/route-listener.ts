@@ -11,11 +11,20 @@ const key = Symbol('ROUTE_CHANGE');
 
 let latestRoute: RouteLocationNormalized;
 
+/**
+ * 设置路由监听器
+ * @param to
+ */
 export function setRouteEmitter(to: RouteLocationNormalized) {
   emitter.emit(key, to);
   latestRoute = to;
 }
 
+/**
+ * 监听路由发生改变
+ * @param handler
+ * @param immediate
+ */
 export function listenerRouteChange(
   handler: (route: RouteLocationNormalized) => void,
   immediate = true
@@ -26,6 +35,9 @@ export function listenerRouteChange(
   }
 }
 
+/**
+ * 移除路由监听器
+ */
 export function removeRouteListener() {
   emitter.off(key);
 }

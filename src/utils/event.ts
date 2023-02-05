@@ -1,3 +1,10 @@
+/**
+ *添加事件监听
+ * @param target
+ * @param event
+ * @param handler
+ * @param capture
+ */
 export function addEventListen(
   target: Window | HTMLElement,
   event: string,
@@ -12,6 +19,13 @@ export function addEventListen(
   }
 }
 
+/**
+ * 移除事件监听
+ * @param target
+ * @param event
+ * @param handler
+ * @param capture
+ */
 export function removeEventListen(
   target: Window | HTMLElement,
   event: string,
