@@ -6,6 +6,7 @@ export interface ToolsRecord {
   href: string;
   target: '_blank';
   title: string;
+  type: 'Web' | 'Java' | 'Python' | 'DataV' | string;
 }
 
 export interface ToolsParams extends Partial<ToolsRecord> {

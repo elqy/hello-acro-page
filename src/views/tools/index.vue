@@ -1,19 +1,43 @@
 <template>
-  <div class="grid-demo-background">
-    <a-space direction="vertical" :size="16" style="display: block">
-      <a-row class="grid-demo">
-        <a-col :span="24"> Web前段开发工具 </a-col>
-      </a-row>
-      <a-row class="grid-demo">
-        <a-col v-for="(item, index) in toolsData.list" :key="index" :span="6">
-          <div>
-            <a-link :href="item.href" :target="item.target"
-              >{{ item.title }}
-            </a-link>
-          </div>
-        </a-col>
-      </a-row>
-    </a-space>
+  <div class="container">
+    <Breadcrumb :items="['menu.tools', 'menu.tools.dev']" />
+    <a-row :gutter="20" align="stretch">
+      <a-col :span="24">
+        <a-card class="general-card" :title="$t('menu.tool.cardList')">
+          <a-row justify="space-between">
+            <a-col :span="24">
+              <a-tabs :default-active-tab="1" type="rounded">
+                <a-tab-pane key="1" :title="$t('tool.tab.title.all')">
+                  <ToolCard :type="typeWeb" />
+                  <a-divider />
+                  <ToolCard :type="typeJava" />
+                  <a-divider />
+                  <ToolCard :type="typePython" />
+                  <a-divider />
+                  <ToolCard :type="typeDataV" />
+                </a-tab-pane>
+                <a-tab-pane key="2" :title="$t('tool.tab.title.web')">
+                  <ToolCard :type="typeWeb" />
+                </a-tab-pane>
+                <a-tab-pane key="3" :title="$t('tool.tab.title.java')">
+                  <ToolCard :type="typeJava" />
+                </a-tab-pane>
+                <a-tab-pane key="4" :title="$t('tool.tab.title.python')">
+                  <ToolCard :type="typePython" />
+                </a-tab-pane>
+                <a-tab-pane key="5" :title="$t('tool.tab.title.datav')">
+                  <ToolCard :type="typeDataV" />
+                </a-tab-pane>
+              </a-tabs>
+            </a-col>
+            <a-input-search
+              :placeholder="$t('cardList.searchInput.placeholder')"
+              style="position: absolute; top: 60px; right: 20px; width: 240px"
+            />
+          </a-row>
+        </a-card>
+      </a-col>
+    </a-row>
   </div>
 </template>
 
@@ -26,6 +50,14 @@
     ToolsRecord,
   } from '@/api/tools';
   import useLoading from '@/hooks/loading';
+  import ToolCard from './components/tool-card.vue';
+
+  type TypeProps = 'Web' | 'Java' | 'Python' | 'DataV';
+
+  const typeWeb = ref<TypeProps>('Web');
+  const typeJava = ref<TypeProps>('Java');
+  const typePython = ref<TypeProps>('Python');
+  const typeDataV = ref<TypeProps>('DataV');
 
   const { loading, setLoading } = useLoading(true);
   const renderData = ref<ToolsRecord[]>([]);
@@ -53,71 +85,53 @@
   };
 </script>
 
-<style scoped>
-  .grid-demo-background {
-    background-image: linear-gradient(
-      90deg,
-      var(--color-fill-2) 4.16666667%,
-      transparent 4.16666667%,
-      transparent 8.33333333%,
-      var(--color-fill-2) 8.33333333%,
-      var(--color-fill-2) 12.5%,
-      transparent 12.5%,
-      transparent 16.66666667%,
-      var(--color-fill-2) 16.66666667%,
-      var(--color-fill-2) 20.83333333%,
-      transparent 20.83333333%,
-      transparent 25%,
-      var(--color-fill-2) 25%,
-      var(--color-fill-2) 29.16666667%,
-      transparent 29.16666667%,
-      transparent 33.33333333%,
-      var(--color-fill-2) 33.33333333%,
-      var(--color-fill-2) 37.5%,
-      transparent 37.5%,
-      transparent 41.66666667%,
-      var(--color-fill-2) 41.66666667%,
-      var(--color-fill-2) 45.83333333%,
-      transparent 45.83333333%,
-      transparent 50%,
-      var(--color-fill-2) 50%,
-      var(--color-fill-2) 54.16666667%,
-      transparent 54.16666667%,
-      transparent 58.33333333%,
-      var(--color-fill-2) 58.33333333%,
-      var(--color-fill-2) 62.5%,
-      transparent 62.5%,
-      transparent 66.66666667%,
-      var(--color-fill-2) 66.66666667%,
-      var(--color-fill-2) 70.83333333%,
-      transparent 70.83333333%,
-      transparent 75%,
-      var(--color-fill-2) 75%,
-      var(--color-fill-2) 79.16666667%,
-      transparent 79.16666667%,
-      transparent 83.33333333%,
-      var(--color-fill-2) 83.33333333%,
-      var(--color-fill-2) 87.5%,
-      transparent 87.5%,
-      transparent 91.66666667%,
-      var(--color-fill-2) 91.66666667%,
-      var(--color-fill-2) 95.83333333%,
-      transparent 95.83333333%
-    );
+<style scoped lang="less">
+  .container {
+    padding: 0 20px 20px;
+
+    :deep(.arco-list-content) {
+      overflow-x: hidden;
+    }
+
+    :deep(.arco-card-meta-title) {
+      font-size: 14px;
+    }
   }
 
-  .grid-demo .arco-col {
-    height: 48px;
-    color: var(--color-white);
-    line-height: 48px;
-    text-align: center;
+  :deep(.arco-list-col) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
-  .grid-demo .arco-col:nth-child(2n) {
-    background-color: rgb(var(--arcoblue-6) 0.9);
+  :deep(.arco-list-item) {
+    width: 33%;
   }
 
-  .grid-demo .arco-col:nth-child(2n + 1) {
-    background-color: var(--color-primary-light-4);
+  :deep(.block-title) {
+    margin: 0 0 12px;
+    font-size: 14px;
+  }
+
+  :deep(.list-wrap) {
+    // min-height: 140px;
+    .list-row {
+      align-items: stretch;
+
+      .list-col {
+        margin-bottom: 16px;
+      }
+    }
+
+    :deep(.arco-space) {
+      width: 100%;
+
+      .arco-space-item {
+        &:last-child {
+          flex: 1;
+        }
+      }
+    }
   }
 </style>

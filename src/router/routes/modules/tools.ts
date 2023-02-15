@@ -17,7 +17,7 @@ const Tools: AppRouteRecordRaw = {
       name: 'Tools',
       component: () => import('@/views/tools/index.vue'),
       meta: {
-        locale: 'menu.tools.web',
+        locale: 'menu.tools.dev',
         requiresAuth: true,
         roles: ['*'],
       },
