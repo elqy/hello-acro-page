@@ -42,13 +42,8 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref, onMounted } from 'vue';
-  import {
-    queryToolsList,
-    ToolsListRes,
-    ToolsParams,
-    ToolsRecord,
-  } from '@/api/tools';
+  import { ref } from 'vue';
+  import { queryToolsList, ToolsListRes, ToolsParams } from '@/api/tools';
   import useLoading from '@/hooks/loading';
   import ToolCard from './components/tool-card.vue';
 
@@ -59,8 +54,7 @@
   const typePython = ref<TypeProps>('Python');
   const typeDataV = ref<TypeProps>('DataV');
 
-  const { loading, setLoading } = useLoading(true);
-  const renderData = ref<ToolsRecord[]>([]);
+  const { setLoading } = useLoading(true);
   const toolsData = ref<ToolsListRes>({ list: [], total: 1 });
   const fetchData = async (
     params: ToolsParams = { current: 1, pageSize: 20 }
@@ -76,7 +70,6 @@
     }
   };
   fetchData();
-  onMounted(() => {});
 </script>
 
 <script lang="ts">
