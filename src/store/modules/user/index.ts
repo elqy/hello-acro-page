@@ -62,9 +62,31 @@ const useUserStore = defineStore('user', {
     // 获取用户信息
     async info() {
       // 异步加载用户信息
-      const res = await getUserInfo();
+      // const res = await getUserInfo();
+      // 临时github pages
+      const res = getUserInfo();
       // 将获取的用户数据设置成
-      this.setInfo(res.data);
+      // this.setInfo(res.data);
+      const role = window.localStorage.getItem('userRole') || 'admin';
+      this.setInfo({
+        name: '王立群',
+        avatar:
+          '//lf1-xgcdn-tos.pstatp.com/obj/vcloud/vadmin/start.8e0e4855ee346a46ccff8ff3e24db27b.png',
+        email: 'wangliqun@email.com',
+        job: 'frontend',
+        jobName: '前端艺术家',
+        organization: 'Frontend',
+        organizationName: '前端',
+        location: 'beijing',
+        locationName: '北京',
+        introduction: '人潇洒，性温存',
+        personalWebsite: 'https://www.arco.design',
+        phone: '150****0000',
+        registrationDate: '2013-05-10 12:10:00',
+        accountId: '15012312300',
+        certification: 1,
+        role: 'admin',
+      });
     },
 
     // 登录
@@ -76,7 +98,7 @@ const useUserStore = defineStore('user', {
         const res = userLogin(loginForm);
         // 将返回的数据token存储到state中
         // setToken(res.data.token);
-        setToken('123456');
+        // setToken('12345');
       } catch (err) {
         // 清除token
         clearToken();
