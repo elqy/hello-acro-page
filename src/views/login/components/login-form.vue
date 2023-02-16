@@ -104,7 +104,9 @@
         await userStore.login(values as LoginData);
         const { redirect, ...othersQuery } = router.currentRoute.value.query;
         router.push({
-          name: (redirect as string) || 'Workplace',
+          // 暂时注释掉，改用gitpages
+          name: (redirect as string) || 'Tools',
+          // name: (redirect as string) || 'Workplace',
           query: {
             ...othersQuery,
           },
