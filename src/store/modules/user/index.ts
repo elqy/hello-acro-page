@@ -71,9 +71,12 @@ const useUserStore = defineStore('user', {
     async login(loginForm: LoginData) {
       try {
         // 异步加载用户登录信息
-        const res = await userLogin(loginForm);
+        // const res = await userLogin(loginForm);
+        // 临时github pages
+        const res = userLogin(loginForm);
         // 将返回的数据token存储到state中
-        setToken(res.data.token);
+        // setToken(res.data.token);
+        setToken('123456');
       } catch (err) {
         // 清除token
         clearToken();
