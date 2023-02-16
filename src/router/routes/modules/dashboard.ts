@@ -8,6 +8,7 @@ const DASHBOARD: AppRouteRecordRaw = {
   meta: {
     locale: 'menu.dashboard',
     requiresAuth: true,
+    roles: ['super-admin'],
     icon: 'icon-dashboard',
     order: 0,
   },
@@ -19,7 +20,8 @@ const DASHBOARD: AppRouteRecordRaw = {
       meta: {
         locale: 'menu.dashboard.workplace',
         requiresAuth: true,
-        roles: ['*'],
+        //        roles: ['*'],
+        roles: ['super-admin'],
       },
     },
 
@@ -30,7 +32,8 @@ const DASHBOARD: AppRouteRecordRaw = {
       meta: {
         locale: 'menu.dashboard.monitor',
         requiresAuth: true,
-        roles: ['admin'],
+        // roles: ['admin'],
+        roles: ['super-admin'],
       },
     },
   ],
