@@ -6,6 +6,7 @@ import svgLoader from 'vite-svg-loader';
 
 export default defineConfig({
   plugins: [vue(), vueJsx(), svgLoader({ svgoConfig: {} })],
+  base: './', // 将根路径换成相对路径,一般项目需要去掉，这里是需要发布到github的pages时需要相对路径
   resolve: {
     alias: [
       {
