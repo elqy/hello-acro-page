@@ -5,7 +5,7 @@ import {
   getUserInfo,
   LoginData,
 } from '@/api/user';
-import { setToken, clearToken } from '@/utils/auth';
+import { clearToken } from '@/utils/auth';
 import { removeRouteListener } from '@/utils/route-listener';
 import { UserState } from './types';
 import useAppStore from '../app';
@@ -64,25 +64,25 @@ const useUserStore = defineStore('user', {
       // 异步加载用户信息
       // const res = await getUserInfo();
       // 临时github pages
-      const res = getUserInfo();
+      getUserInfo();
       // 将获取的用户数据设置成
       // this.setInfo(res.data);
-      const role = window.localStorage.getItem('userRole') || 'admin';
+      // const role = window.localStorage.getItem('userRole') || 'admin';
       this.setInfo({
-        name: '王立群',
+        name: '刘沁义',
         avatar:
           '//lf1-xgcdn-tos.pstatp.com/obj/vcloud/vadmin/start.8e0e4855ee346a46ccff8ff3e24db27b.png',
-        email: 'wangliqun@email.com',
-        job: 'frontend',
-        jobName: '前端艺术家',
-        organization: 'Frontend',
-        organizationName: '前端',
-        location: 'beijing',
-        locationName: '北京',
+        email: 'liuqinyi9697@dingtalk.com',
+        job: 'java全栈',
+        jobName: '全栈工程师',
+        organization: '智创英杰',
+        organizationName: '北京智创英杰信息技术有限公司',
+        location: 'shijiazhuang',
+        locationName: '石家庄',
         introduction: '人潇洒，性温存',
-        personalWebsite: 'https://www.arco.design',
-        phone: '150****0000',
-        registrationDate: '2013-05-10 12:10:00',
+        personalWebsite: 'https://elqy.github.io/',
+        phone: '153****0000',
+        registrationDate: '2002-07-01 12:10:00',
         accountId: '15012312300',
         certification: 1,
         role: 'admin',
@@ -95,7 +95,7 @@ const useUserStore = defineStore('user', {
         // 异步加载用户登录信息
         // const res = await userLogin(loginForm);
         // 临时github pages
-        const res = userLogin(loginForm);
+        userLogin(loginForm);
         // 将返回的数据token存储到state中
         // setToken(res.data.token);
         // setToken('12345');
