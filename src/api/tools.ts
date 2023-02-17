@@ -1,5 +1,3 @@
-import axios from 'axios';
-import qs from 'query-string';
 import { successResponseWrap } from '@/utils/setup-mock';
 
 export interface ToolsRecord {
