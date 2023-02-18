@@ -52,12 +52,14 @@
   import useLoading from '@/hooks/loading';
   import ToolCard from './components/tool-card.vue';
 
-  type TypeProps = 'Web' | 'Java' | 'Python' | 'DataV';
+  type TypeProps = 'Web' | 'Java' | 'Python' | 'Go' | 'DataV' | 'Other';
 
   const typeWeb = ref<TypeProps>('Web');
   const typeJava = ref<TypeProps>('Java');
   const typePython = ref<TypeProps>('Python');
   const typeDataV = ref<TypeProps>('DataV');
+  const typeGo = ref<TypeProps>('Go');
+  const typeOther = ref<TypeProps>('Other');
 
   const { loading, setLoading } = useLoading(true);
   const renderData = ref<ToolsRecord[]>([]);
