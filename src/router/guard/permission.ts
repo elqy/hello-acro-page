@@ -59,12 +59,18 @@ export default function setupPermissionGuard(router: Router) {
     } else {
       // 否则不存在服务器端菜单项
       // eslint-disable-next-line no-lonely-if
+      console.log('--------aaa---------');
+      console.log(permissionsAllow);
+      console.log('--------aaa----------');
       if (permissionsAllow) next();
       else {
         // 从路由集合中发现目标路由
         const destination =
           Permission.findFirstPermissionRoute(appRoutes, userStore.role) ||
           NOT_FOUND;
+        console.log('-------bbbb---------');
+        console.log(destination);
+        console.log('-------bbbb---------');
         next(destination);
       }
     }

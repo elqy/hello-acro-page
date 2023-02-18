@@ -22,7 +22,6 @@ const DASHBOARD: AppRouteRecordRaw = {
         roles: ['*'],
       },
     },
-
     {
       path: 'monitor',
       name: 'Monitor',
