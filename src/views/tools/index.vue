@@ -22,11 +22,17 @@
                 <a-tab-pane key="3" :title="$t('tool.tab.title.java')">
                   <ToolCard :type="typeJava" />
                 </a-tab-pane>
-                <a-tab-pane key="4" :title="$t('tool.tab.title.python')">
+                <a-tab-pane key="4" :title="$t('tool.tab.title.datav')">
+                  <ToolCard :type="typeDataV" />
+                </a-tab-pane>
+                <a-tab-pane key="5" :title="$t('tool.tab.title.go')">
+                  <ToolCard :type="typeGo" />
+                </a-tab-pane>
+                <a-tab-pane key="6" :title="$t('tool.tab.title.python')">
                   <ToolCard :type="typePython" />
                 </a-tab-pane>
-                <a-tab-pane key="5" :title="$t('tool.tab.title.datav')">
-                  <ToolCard :type="typeDataV" />
+                <a-tab-pane key="7" :title="$t('tool.tab.title.other')">
+                  <ToolCard :type="typeOther" />
                 </a-tab-pane>
               </a-tabs>
             </a-col>
