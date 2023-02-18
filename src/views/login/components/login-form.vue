@@ -105,8 +105,8 @@
         const { redirect, ...othersQuery } = router.currentRoute.value.query;
         router.push({
           // 暂时注释掉，改用gitpages
-          name: (redirect as string) || 'Tools',
-          // name: (redirect as string) || 'Workplace',
+          // name: (redirect as string) || 'Tools',
+          name: (redirect as string) || 'Workplace',
           query: {
             ...othersQuery,
           },
