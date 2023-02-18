@@ -221,13 +221,98 @@ const toolsDataList = [
     title: 'pig-权限框架系统',
     type: 'Java',
   },
-  // freecodecamp
-  // iconpark
-  // easyAdmin
-  // GoFrame Web框架
-  // go-zero
-  // gogocode
-  // oneinstack
+  {
+    id: 29,
+    href: 'https://www.freecodecamp.org/learn/',
+    target: '_blank',
+    title: 'freecodecamp',
+    type: 'Java',
+  },
+  {
+    id: 30,
+    href: 'https://iconpark.oceanengine.com/home',
+    target: '_blank',
+    title: 'iconpark',
+    type: 'Web',
+  },
+  {
+    id: 31,
+    href: 'https://goframe.org/#all-updates',
+    target: '_blank',
+    title: 'GoFrame Web框架',
+    type: 'Go',
+  },
+  {
+    id: 32,
+    href: 'https://go-zero.dev/cn/',
+    target: '_blank',
+    title: 'go-zero',
+    type: 'Go',
+  },
+  {
+    id: 33,
+    href: 'https://gogocode.io/zh',
+    target: '_blank',
+    title: 'gogocode-代码转换从未如此简单',
+    type: 'Go',
+  },
+  {
+    id: 34,
+    href: 'http://www.ruoyi.vip/',
+    target: '_blank',
+    title: '若依',
+    type: 'Java',
+  },
+  {
+    id: 35,
+    href: 'http://www.jeecg.com/',
+    target: '_blank',
+    title: 'jeecgBoot',
+    type: 'Java',
+  },
+  {
+    id: 36,
+    href: 'http://www.pearadmin.com/',
+    target: '_blank',
+    title: 'Pear Admin',
+    type: 'Java',
+  },
+  {
+    id: 37,
+    href: 'https://www.likeadmin.cn/',
+    target: '_blank',
+    title: 'likeAdmin',
+    type: 'Java',
+  },
+  {
+    id: 38,
+    href: 'https://doc.vvbin.cn/',
+    target: '_blank',
+    title: 'Vben Admin-一个开箱即用的前端框架',
+    type: 'Web',
+  },
+  {
+    id: 39,
+    href: 'https://doc.ryansu.pro/zh/',
+    target: '_blank',
+    title: 'Simple Admin',
+    type: 'Go',
+  },
+  {
+    id: 40,
+    href: 'https://docs.dongtai.io/',
+    target: '_blank',
+    title: 'DongTai-漏洞扫描工具',
+    type: 'Other',
+  },
+  {
+    id: 41,
+    href: 'https://docs.dongtai.io/',
+    target: '_blank',
+    title: 'QingScan',
+    type: 'Other',
+  },
+
   // sourcetree
   // nginxconfig.io
   // vant
@@ -235,25 +320,19 @@ const toolsDataList = [
   // naive ui
   // Erupt
   // Amis
-  // 若依
   // semi Design
   // arcoDesign
   // dataV
-  // jeecgBoot
   // Hutool
   // Chiner
   // ApiFox
-  // QingScan
-  // DongTai
+  //
+  //
   // Open IM
-  // Pear Admin
   // AntV
-  // Vben Admin
   // tauri
-  // likeAdmin
   // Mitosis
   // mini sandbox
-  // Simple Admin
   // DataEase
   // Kratos
   // LiteFlow

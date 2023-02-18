@@ -15,6 +15,8 @@
                   <ToolCard :type="typePython" />
                   <a-divider />
                   <ToolCard :type="typeDataV" />
+                  <a-divider />
+                  <ToolCard :type="typeGo" />
                 </a-tab-pane>
                 <a-tab-pane key="2" :title="$t('tool.tab.title.web')">
                   <ToolCard :type="typeWeb" />
@@ -22,11 +24,17 @@
                 <a-tab-pane key="3" :title="$t('tool.tab.title.java')">
                   <ToolCard :type="typeJava" />
                 </a-tab-pane>
-                <a-tab-pane key="4" :title="$t('tool.tab.title.python')">
+                <a-tab-pane key="4" :title="$t('tool.tab.title.datav')">
+                  <ToolCard :type="typeDataV" />
+                </a-tab-pane>
+                <a-tab-pane key="5" :title="$t('tool.tab.title.go')">
+                  <ToolCard :type="typeGo" />
+                </a-tab-pane>
+                <a-tab-pane key="6" :title="$t('tool.tab.title.python')">
                   <ToolCard :type="typePython" />
                 </a-tab-pane>
-                <a-tab-pane key="5" :title="$t('tool.tab.title.datav')">
-                  <ToolCard :type="typeDataV" />
+                <a-tab-pane key="7" :title="$t('tool.tab.title.other')">
+                  <ToolCard :type="typeOther" />
                 </a-tab-pane>
               </a-tabs>
             </a-col>
@@ -47,12 +55,14 @@
   import useLoading from '@/hooks/loading';
   import ToolCard from './components/tool-card.vue';
 
-  type TypeProps = 'Web' | 'Java' | 'Python' | 'DataV';
+  type TypeProps = 'Web' | 'Java' | 'Python' | 'Go' | 'DataV' | 'Other';
 
   const typeWeb = ref<TypeProps>('Web');
   const typeJava = ref<TypeProps>('Java');
   const typePython = ref<TypeProps>('Python');
   const typeDataV = ref<TypeProps>('DataV');
+  const typeGo = ref<TypeProps>('Go');
+  const typeOther = ref<TypeProps>('Other');
 
   const { setLoading } = useLoading(true);
   const toolsData = ref<ToolsListRes>({ list: [], total: 1 });
