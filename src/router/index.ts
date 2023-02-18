@@ -14,7 +14,7 @@ const router = createRouter({
     // 1.静态路由
     {
       path: '/',
-      redirect: 'dashboard',
+      redirect: 'login',
     },
     {
       path: '/login',
